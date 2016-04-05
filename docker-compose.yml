@@ -1,0 +1,23 @@
+# frontend
+frontend:
+  build: ./frontend
+  ports:
+    - "4000:4000"
+  links:
+    - api
+  volumes:
+    - ./frontend:/app
+
+# API Layer
+api:
+  build: ./api
+  ports:
+    - "8080:8080"
+  links:
+    - mongo
+
+mongo:
+  image: "mvertes/alpine-mongo:latest"
+  command: mongod --smallfiles
+  volumes:
+    - /data

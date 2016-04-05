@@ -1,0 +1,16 @@
+build:
+  commands:
+    - docker-compose build api
+    - docker-compose build frontend
+
+test:
+  commands:
+    - echo "testing stuffs"
+
+push:
+  commands:
+    - docker tag -f angular2dockerdemo_api:latest willbeebe/angular2-docker-demo_api
+    - docker tag -f angular2dockerdemo_frontend:latest willbeebe/angular2-docker-demo_frontend
+    - docker login --email="<%= ENV['DOCKERHUB_EMAIL'] %>" --username="<%= ENV['DOCKERHUB_USERNAME'] %>" --password="<%= ENV['DOCKERHUB_PASSWORD'] %>"
+    - docker push willbeebe/angular2-docker-demo_api
+    - docker push willbeebe/angular2-docker-demo_frontend

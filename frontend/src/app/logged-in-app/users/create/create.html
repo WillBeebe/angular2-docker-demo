@@ -1,0 +1,22 @@
+<h2>Create User</h2>
+<form role="form" (submit)="create($event, name.value, email.value, is_admin.checked)">
+    <div class="form-group">
+        <label>User Name</label>
+        <input type="text" #name class="form-control" id="name">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" #email class="form-control" id="email">
+    </div>
+    <div class="form-group">
+        <label>
+          <input type="checkbox" #is_admin>
+          Admin
+      </label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<toaster-container></toaster-container>
+
+<router-outlet></router-outlet>
