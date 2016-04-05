@@ -1,0 +1,26 @@
+<div style="float: right;">
+    <button class="btn btn-default" [routerLink]="['UserCreate']">Create User</button>
+</div>
+<div ng-show="users">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Email Verified</th>
+            <th>Is Admin</th>
+            <th>Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="#user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.emailVerified}}</td>
+            <td>{{user.admin}}</td>
+            <td><button (click)="editUser(user)" class="btn btn-default">Edit</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<router-outlet></router-outlet>
