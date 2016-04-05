@@ -34,14 +34,9 @@ app.route('/app.css')
     res.sendFile(path.join(__dirname+'/src/app/app.css'));
   });
 
-app.route('/favicon.png')
+app.route('/favicon.ico')
   .get(function(req, res) {
-    res.sendFile(path.join(__dirname+'/dist/favicon.png'));
-  });
-
-app.route('/dist/logo.png')
-  .get(function(req, res) {
-    res.sendFile(path.join(__dirname+'/dist/logo.png'));
+    res.sendFile(path.join(__dirname+'/dist/favicon.ico'));
   });
 
 app.get('*', function(req, res) {
