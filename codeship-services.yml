@@ -1,0 +1,4 @@
+api:
+  build:
+    image: willbeebe/angular2demo
+    dockerfile_path: api/Dockerfile
