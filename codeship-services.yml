@@ -1,5 +1,23 @@
+frontend:
+  build:
+    image: willbeebe/angular2demo
+    path: frontend
+    dockerfile_path: Dockerfile
+    ports:
+      - "4000:4000"
+    links:
+      - api
+
 api:
   build:
     image: willbeebe/angular2demo
     path: api
     dockerfile_path: Dockerfile
+    links:
+      - mongo
+
+mongo:
+  image: "mvertes/alpine-mongo:latest"
+  command: mongod --smallfiles
+  volumes:
+    - /data
