@@ -1,4 +1,4 @@
 {
-  "api_host": "http://192.168.99.100",
+  "api_host": "http://localhost",
   "api_port": "8080"
 }
